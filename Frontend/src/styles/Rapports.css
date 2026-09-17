@@ -1,0 +1,122 @@
+.reports-head {
+  margin-bottom: 22px;
+}
+.reports-head h1 {
+  font-size: 23px;
+}
+.reports-head p {
+  margin: 5px 0 0;
+  color: var(--text-muted);
+  font-size: 13.5px;
+}
+.report-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 16px 20px;
+}
+.report-chip {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text-muted);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.report-chip.active {
+  background: var(--navy-900);
+  border-color: var(--navy-900);
+  color: #fff;
+}
+.report-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.report-kpi {
+  padding: 18px 20px;
+  border-radius: var(--radius);
+  background: var(--white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.report-kpi span {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.report-kpi strong {
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 20px;
+  color: var(--navy-900);
+  margin-top: 10px;
+}
+.report-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.report-bars {
+  display: grid;
+  gap: 14px;
+}
+.report-bar > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.report-bar strong {
+  font-size: 13px;
+}
+.report-bar span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.report-bar i,
+.rate-cell i {
+  display: block;
+  height: 7px;
+  background: var(--page-bg);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.report-bar b,
+.rate-cell b {
+  display: block;
+  height: 100%;
+  background: var(--navy-700);
+  border-radius: inherit;
+}
+.rate-cell {
+  min-width: 100px;
+}
+.rate-cell span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.reports-loading {
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+@media (max-width: 900px) {
+  .report-kpis,
+  .report-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 580px) {
+  .report-kpis,
+  .report-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,346 @@
+.line-detail {
+  max-width: 1200px;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--navy-700);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.line-detail-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.line-detail-head h1 {
+  font-size: 23px;
+}
+.line-detail-head p {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin: 5px 0 0;
+}
+.line-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.line-summary > div {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 14px 16px;
+}
+.line-summary span {
+  display: block;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+.line-summary strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--navy-900);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
+}
+.detail-body {
+  padding: 16px 20px 20px;
+}
+.detail-annuity-grid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.detail-annuity-grid div {
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--page-bg);
+}
+.detail-annuity-grid strong,
+.detail-annuity-grid span {
+  display: block;
+}
+.detail-annuity-grid strong {
+  font-size: 12px;
+  color: var(--navy-700);
+}
+.detail-annuity-grid span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  margin-top: 3px;
+}
+.panel-head h3 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.panel-head a {
+  font-size: 12px;
+  color: var(--navy-500);
+  font-weight: 600;
+}
+@media (max-width: 700px) {
+  .line-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.annual-orders-panel,
+.related-panel {
+  margin-top: 16px;
+}
+.panel-head p {
+  margin: 3px 0 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 400;
+}
+.annual-orders-list {
+  display: grid;
+  gap: 12px;
+  padding: 16px 20px 20px;
+}
+.annual-order-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.annual-order-summary {
+  display: grid;
+  grid-template-columns: auto minmax(180px, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 14px;
+  background: var(--page-bg);
+}
+.annual-year {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 38px;
+  border-radius: 7px;
+  background: var(--navy-700);
+  color: #fff;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-size: 12px;
+}
+.annual-order-summary strong,
+.annual-order-summary small {
+  display: block;
+}
+.annual-order-summary strong {
+  font-size: 13px;
+  color: var(--navy-900);
+}
+.annual-order-summary small {
+  margin-top: 3px;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+.annual-order-summary > b {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  color: var(--navy-700);
+}
+.annual-progress {
+  height: 5px;
+  border-radius: 99px;
+  background: #dce4ec;
+  margin-top: 8px;
+  overflow: hidden;
+}
+.annual-progress i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--navy-700);
+}
+.annual-order-items {
+  border-top: 1px solid var(--border);
+}
+.annual-order-items > div,
+.related-row {
+  display: grid;
+  grid-template-columns: 125px minmax(160px, 1fr) minmax(130px, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+.annual-order-items > div:last-child {
+  border-bottom: 0;
+}
+.annual-order-items strong {
+  font-size: 12px;
+}
+.annual-order-items small {
+  color: var(--text-muted);
+}
+.annual-order-items b,
+.related-row strong {
+  text-align: right;
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--navy-900);
+  font-size: 12px;
+}
+.related-list {
+  padding: 4px 20px 16px;
+}
+.related-row {
+  grid-template-columns: 155px minmax(120px, 1fr) auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+.related-reference {
+  font-weight: 700;
+  color: var(--navy-700);
+}
+.related-empty {
+  display: grid;
+  gap: 3px;
+  min-height: 74px;
+  align-content: center;
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-left: 30px;
+}
+.related-empty strong {
+  color: var(--navy-900);
+  font-size: 13px;
+}
+.badge.bc-status-draft {
+  background: #eef1f5;
+  color: #5b6472;
+}
+.badge.bc-status-sent {
+  background: #e4f0ff;
+  color: #1769aa;
+}
+.badge.bc-status-received {
+  background: #fff3d7;
+  color: #a85d00;
+}
+.badge.bc-status-validation {
+  background: #ece8ff;
+  color: #5940aa;
+}
+.badge.bc-status-payment {
+  background: #fde7f3;
+  color: #a62d72;
+}
+.badge.bc-status-paid {
+  background: #dff6e8;
+  color: #167143;
+}
+.invoice-card-subtitle {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  color: var(--text-dark);
+}
+.invoice-list {
+  display: grid;
+  gap: 12px;
+  padding: 16px 20px 20px;
+}
+.invoice-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.invoice-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.invoice-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.invoice-amount {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 15px;
+  color: var(--navy-900);
+  white-space: nowrap;
+}
+.invoice-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+.invoice-card-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.invoice-card-meta svg {
+  color: var(--text-faint);
+  flex-shrink: 0;
+}
+.invoice-card-dates {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.invoice-card-dates > div {
+  display: grid;
+  gap: 3px;
+}
+.invoice-card-dates span {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-faint);
+}
+.invoice-card-dates strong {
+  font-size: 12px;
+  color: var(--navy-900);
+  font-family: "IBM Plex Mono", monospace;
+}
+.invoice-date-warning strong {
+  color: var(--danger);
+}
+@media (max-width: 700px) {
+  .invoice-card-dates {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .annual-order-summary {
+    grid-template-columns: auto 1fr;
+  }
+  .annual-order-summary > b {
+    display: none;
+  }
+  .annual-order-items > div,
+  .related-row {
+    grid-template-columns: 1fr auto;
+  }
+  .annual-order-items small {
+    grid-column: 1/-1;
+  }
+  .annual-order-items b {
+    grid-column: 2;
+  }
+  .related-row span:nth-child(2) {
+    display: none;
+  }
+}

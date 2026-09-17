@@ -1,0 +1,303 @@
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 252px;
+  flex-shrink: 0;
+  background: var(--navy-900);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  color: var(--navy-100);
+  z-index: 150;
+  transition: left 0.2s ease;
+}
+.sidebar .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 20px 18px 22px;
+}
+/* 1. Largeur de la scrollbar */
+.sidebar::-webkit-scrollbar {
+  width: 6px; /* Très fine */
+}
+
+/* 2. Le fond de la barre (Track) */
+.sidebar::-webkit-scrollbar-track {
+  background: transparent; /* Fond invisible */
+}
+
+/* 3. Le curseur qu'on déplace (Thumb) */
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #374151; /* Gris foncé moderne */
+  border-radius: 10px; /* Bords arrondis */
+}
+
+/* 4. Au survol du curseur */
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #4b5563; /* Légèrement plus clair au survol */
+}
+.exercice-pill {
+  margin: 4px 20px 18px 22px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 9px;
+}
+.exercice-pill .lbl {
+  font-size: 10px;
+  color: #7c93b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  display: block;
+}
+.exercice-pill .val {
+  font-size: 13px;
+  color: #fff;
+  font-weight: 600;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+nav.nav-list {
+  padding: 6px 12px;
+  flex: 1;
+  overflow-y: auto;
+}
+/* cibler la zone avec overflow-y: auto */
+nav.nav-list {
+  padding: 6px 12px;
+  flex: 1;
+  overflow-y: auto;
+
+  /* Compatibilité Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #374151 transparent;
+}
+
+/* 1. Largeur de la scrollbar */
+nav.nav-list::-webkit-scrollbar {
+  width: 6px; /* Fine et discrète */
+}
+
+/* 2. Le fond de la barre (Track) */
+nav.nav-list::-webkit-scrollbar-track {
+  background: transparent; /* Fond invisible */
+}
+
+/* 3. Le curseur qu'on déplace (Thumb) */
+nav.nav-list::-webkit-scrollbar-thumb {
+  background-color: #374151; /* Gris foncé moderne adapté à ton navy-900 */
+  border-radius: 10px; /* Bords arrondis */
+}
+
+/* 4. Au survol du curseur */
+nav.nav-list::-webkit-scrollbar-thumb:hover {
+  background-color: #4b5563; /* Plus clair au survol */
+}
+.nav-section-label {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #5d77a0;
+  font-weight: 700;
+  padding: 16px 10px 6px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  color: #b9c8e0;
+  font-size: 13.8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 2px;
+  transition:
+    background 0.12s ease,
+    color 0.12s ease;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+.nav-item svg {
+  width: 17px;
+  height: 17px;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+.nav-item.active {
+  background: var(--white);
+  color: var(--navy-900);
+}
+.nav-item.active svg {
+  opacity: 1;
+}
+.nav-item .count {
+  margin-left: auto;
+  font-size: 11px;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.1);
+  color: #cfdbec;
+  padding: 1px 7px;
+  border-radius: 20px;
+}
+.nav-item.active .count {
+  background: var(--navy-100);
+  color: var(--navy-700);
+}
+
+.sidebar-footer {
+  padding: 14px 16px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 9px;
+  cursor: pointer;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+}
+.user-chip:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--navy-500);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12.5px;
+  font-weight: 700;
+  flex-shrink: 0;
+  font-family: "Manrope", sans-serif;
+}
+.user-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+}
+.user-role {
+  font-size: 11px;
+  color: #7c93b8;
+  line-height: 1.3;
+}
+
+/* Topbar */
+main.app-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.topbar {
+  height: 64px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 26px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  gap: 12px;
+}
+.hamburger {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+.topbar-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 14px;
+}
+.topbar-context { display: flex; flex-direction: column; min-width: 0; }
+.topbar-greeting { color: var(--navy-900); font-size: 13px; font-weight: 700; }
+.topbar-department { color: var(--text-muted); font-size: 11.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar-date { display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted); font-size: 12px; text-transform: capitalize; }
+.topbar-profile { display: inline-flex; align-items: center; gap: 7px; border: 0; background: transparent; color: var(--navy-900); font: inherit; font-size: 12.5px; font-weight: 700; cursor: pointer; }
+.topbar-avatar { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: var(--navy-100); color: var(--navy-800); }
+.topbar-logout { display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid var(--border); border-radius: 8px; background: var(--white); color: var(--text-muted); cursor: pointer; }
+.topbar-logout:hover { color: var(--danger, #c53030); border-color: currentColor; }
+.icon-btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+.content {
+  padding: 26px 30px 50px;
+  flex: 1;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 820px) {
+  .sidebar {
+    position: fixed;
+    left: -260px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+  }
+  .sidebar.open {
+    left: 0;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .search-box {
+    width: 160px;
+  }
+  .topbar-date, .topbar-department { display: none; }
+  .sidebar-overlay.open {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 20, 37, 0.4);
+    z-index: 140;
+  }
+}
+
+/* Alignement des actions de gestion. */
+.lines-page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.delete-tree-button {
+  align-self: center;
+  transform: none !important;
+}

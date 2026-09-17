@@ -1,0 +1,70 @@
+services:
+  laravel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    ports:
+      - '8000:8000'
+    volumes:
+      - '.:/var/www/html'
+      - vendor_data:/var/www/html/vendor
+      - node_modules_data:/var/www/html/node_modules
+    working_dir: /var/www/html
+    command: php artisan serve --host=0.0.0.0 --port=8000
+    networks:
+      - sail
+    depends_on:
+      pgsql:
+        condition: service_healthy # Attend que la BDD soit prête à recevoir des connexions
+
+  node:
+    image: 'node:20-alpine'
+    working_dir: /var/www/html/frontend
+    ports:
+      - '5173:5173'
+    volumes:
+      # On monte le dossier Frontend parent à l'intérieur du conteneur
+      - '../Frontend:/var/www/html/frontend'
+      - node_modules_data:/var/www/html/frontend/node_modules
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    networks:
+      - sail
+
+  pgsql:
+    image: 'postgres:18-alpine'
+    ports:
+      - '${FORWARD_DB_PORT:-5432}:5432'
+    environment:
+      PGPASSWORD: '${DB_PASSWORD:?DB_PASSWORD must be set in .env}'
+      POSTGRES_DB: '${DB_DATABASE}'
+      POSTGRES_USER: '${DB_USERNAME}'
+      POSTGRES_PASSWORD: '${DB_PASSWORD:?DB_PASSWORD must be set in .env}'
+    volumes:
+      - 'sail-pgsql:/var/lib/postgresql'
+    networks:
+      - sail
+    healthcheck:
+      test:
+        - CMD
+        - pg_isready
+        - '-q'
+        - '-d'
+        - '${DB_DATABASE}'
+        - '-U'
+        - '${DB_USERNAME}'
+      retries: 3
+      timeout: 5s
+
+networks:
+  sail:
+    driver: bridge
+
+volumes:
+  sail-pgsql:
+    driver: local
+  vendor_data:
+    driver: local
+  node_modules_data:
+    driver: local

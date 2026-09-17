@@ -1,0 +1,323 @@
+/* ===== Reset défensif — neutralise le boilerplate Vite par défaut ===== */
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+}
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  max-width: none;
+  text-align: left;
+  display: block;
+  place-items: unset;
+  min-width: 0;
+}
+body {
+  color: var(--text-dark, #152238);
+  background-color: var(--page-bg, #f1f3f7);
+}
+a {
+  text-decoration: none;
+}
+button {
+  font: inherit;
+}
+/* ===== Fin du reset ===== */
+
+:root {
+  --navy-900: #0b2545;
+  --navy-800: #0f2e56;
+  --navy-700: #173c6b;
+  --navy-500: #2c5c94;
+  --navy-100: #e7edf5;
+  --white: #ffffff;
+  --page-bg: #f1f3f7;
+  --border: #e3e7ee;
+  --text-dark: #152238;
+  --text-muted: #69748a;
+  --text-faint: #97a1b4;
+  --success: #1b8a5b;
+  --success-bg: #e7f6ee;
+  --warning: #b8790f;
+  --warning-bg: #fbf0dd;
+  --danger: #c0392e;
+  --danger-bg: #fbeae8;
+  --neutral: #3a5a8a;
+  --neutral-bg: #eaeff6;
+  --radius: 12px;
+  --shadow: 0 1px 2px rgba(11, 37, 69, 0.04), 0 6px 16px rgba(11, 37, 69, 0.05);
+}
+* {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  margin: 0;
+  color: var(--navy-900);
+}
+.mono {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+/* Boutons */
+.btn-primary {
+  background: var(--navy-900);
+  color: #fff;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 9px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.btn-primary:hover {
+  background: var(--navy-700);
+}
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.btn-primary svg {
+  width: 15px;
+  height: 15px;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--navy-700);
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+.btn-ghost:hover {
+  background: var(--navy-100);
+}
+.btn-ghost:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn-ghost.btn-mini {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.btn-ghost.btn-warn {
+  color: var(--warning);
+  border-color: #f0dbb0;
+}
+.btn-ghost.btn-danger {
+  color: var(--danger);
+  border-color: #f1c7c2;
+}
+
+/* Badges / chips */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.badge.success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+.badge.warning {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+.badge.danger {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+.badge.neutral {
+  background: var(--neutral-bg);
+  color: var(--neutral);
+}
+
+.perm-chip-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.perm-chip {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--navy-100);
+  color: var(--navy-700);
+}
+.perm-chip.none {
+  background: var(--page-bg);
+  color: var(--text-faint);
+  border: 1px dashed var(--border);
+}
+
+/* Champs de formulaire */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+.form-field label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+.form-field label .req {
+  color: var(--danger);
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font-size: 13.5px;
+  font-family: "Inter", sans-serif;
+  outline: none;
+  background: var(--page-bg);
+  color: var(--text-dark);
+  width: 100%;
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--navy-500);
+  background: var(--white);
+}
+.field-error {
+  font-size: 11.5px;
+  color: var(--danger);
+  margin-top: 2px;
+}
+.field-hint {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* Barre de recherche (listes) */
+.search-input {
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+  outline: none;
+  background: var(--page-bg);
+  color: var(--text-dark);
+  min-width: 220px;
+}
+.search-input:focus {
+  border-color: var(--navy-500);
+  background: var(--white);
+}
+.search-input::placeholder {
+  color: var(--text-faint);
+}
+
+/* Barre de filtres (listes) : espacement entre recherche + dropdowns */
+.filters-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.filter-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 9px 34px 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+  outline: none;
+  background: var(--page-bg)
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' stroke='%23667085' stroke-width='1.5' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'/></svg>")
+    no-repeat right 12px center;
+  color: var(--text-dark);
+  min-width: 160px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.filter-select:hover {
+  border-color: var(--navy-300, var(--border));
+}
+.filter-select:focus {
+  border-color: var(--navy-500);
+  background-color: var(--white);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  background: var(--navy-900);
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 11px;
+  box-shadow: 0 12px 30px rgba(11, 37, 69, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  z-index: 300;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  pointer-events: none;
+  max-width: 420px;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.toast svg {
+  width: 18px;
+  height: 18px;
+  color: var(--success);
+  flex-shrink: 0;
+}
+.toast.error {
+  background: var(--danger);
+}
+.toast.error svg {
+  color: #fff;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

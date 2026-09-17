@@ -1,0 +1,104 @@
+.consumption-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.consumption-head h1 {
+  font-size: 23px;
+}
+.consumption-head p {
+  margin: 5px 0 0;
+  color: var(--text-muted);
+  font-size: 13.5px;
+}
+.consumption-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 20px;
+  color: var(--text-muted);
+  font-size: 12.5px;
+}
+.consumption-modal {
+  max-width: 680px;
+}
+.consumption-page .modal-body {
+  padding: 20px 24px;
+}
+.consumption-page .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.consumption-page .form-field.full {
+  grid-column: 1/-1;
+}
+.consumption-loading {
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+.table-subtitle {
+  display: block;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 3px;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+.invoice-complete,
+.invoice-pending {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+}
+.invoice-complete {
+  color: var(--success);
+}
+.invoice-pending {
+  color: var(--text-muted);
+}
+.badge.bc-status-draft {
+  background: #eef1f5;
+  color: #5b6472;
+}
+.badge.bc-status-sent {
+  background: #e4f0ff;
+  color: #1769aa;
+}
+.badge.bc-status-received {
+  background: #fff3d7;
+  color: #a85d00;
+}
+.badge.bc-status-validation {
+  background: #ece8ff;
+  color: #5940aa;
+}
+.badge.bc-status-payment {
+  background: #fde7f3;
+  color: #a62d72;
+}
+.badge.bc-status-paid {
+  background: #dff6e8;
+  color: #167143;
+}
+@media (max-width: 760px) {
+  .consumption-head .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+  .consumption-page .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .consumption-page .form-field.full {
+    grid-column: auto;
+  }
+}

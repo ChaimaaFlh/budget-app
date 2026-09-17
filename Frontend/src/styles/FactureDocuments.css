@@ -1,0 +1,117 @@
+.facture-docs-modal {
+  max-width: 640px;
+}
+.docs-loading,
+.docs-empty {
+  padding: 18px 4px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+.docs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.doc-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+.doc-icon {
+  color: var(--navy-500);
+  flex-shrink: 0;
+}
+.doc-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.doc-info strong {
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.doc-info span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+.doc-badge {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.doc-badge.scan {
+  color: var(--neutral);
+  background: var(--neutral-bg);
+}
+.doc-badge.justif {
+  color: var(--text-muted);
+  background: var(--navy-100);
+}
+.doc-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.docs-upload {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.docs-upload-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.docs-upload-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+.docs-upload input[type="file"] {
+  font-size: 12px;
+  width: 100%;
+}
+.docs-pending-file,
+.docs-pending-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  background: var(--navy-100);
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+}
+.docs-pending-list {
+  list-style: none;
+  margin: 0 0 6px;
+  padding: 0;
+}
+.docs-hint {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin: 0;
+}

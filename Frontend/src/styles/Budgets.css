@@ -1,0 +1,227 @@
+.budgets-page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.budgets-page-head h1 {
+  font-size: 23px;
+}
+.budgets-page-head p {
+  margin: 5px 0 0;
+  color: var(--text-muted);
+  font-size: 13.5px;
+}
+.budget-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.budget-kpi {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+}
+.budget-kpi span {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.budget-kpi strong {
+  display: block;
+  color: var(--navy-900);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
+  margin-top: 6px;
+}
+.budgets-panel {
+  margin-bottom: 0;
+}
+.budget-type {
+  display: block;
+  color: var(--text-muted);
+  font-size: 11.5px;
+  text-transform: capitalize;
+  margin-top: 3px;
+}
+.budget-departments {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  min-width: 120px;
+}
+.budget-department {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--page-bg);
+  color: var(--navy-900);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 7px;
+  white-space: nowrap;
+}
+.budget-department-empty {
+  color: var(--text-faint);
+  font-size: 12px;
+  font-style: italic;
+}
+.dept-multiselect {
+  position: relative;
+}
+.dept-multiselect-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font-size: 13.5px;
+  font-family: "Inter", sans-serif;
+  background: var(--page-bg);
+  color: var(--text-dark);
+  cursor: pointer;
+  text-align: left;
+}
+.dept-multiselect-trigger:hover {
+  border-color: var(--navy-500);
+}
+.dept-multiselect-trigger svg {
+  flex-shrink: 0;
+  color: var(--text-muted);
+}
+.dept-multiselect-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(11, 37, 69, 0.14);
+  padding: 6px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+.dept-multiselect-option {
+  display: grid;
+  grid-template-columns: 15px 1fr;
+  align-items: start;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 7px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+.dept-multiselect-option:hover {
+  background: var(--page-bg);
+}
+.dept-multiselect-option input {
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: var(--navy-700);
+  cursor: pointer;
+}
+.dept-selected-chips {
+  margin-top: 8px;
+}
+.allocation {
+  display: grid;
+  grid-template-columns: minmax(85px, 1fr) auto;
+  align-items: center;
+  gap: 6px;
+  min-width: 165px;
+}
+.allocation-track {
+  height: 7px;
+  border-radius: 20px;
+  background: var(--page-bg);
+  overflow: hidden;
+}
+.allocation-fill {
+  height: 100%;
+  background: var(--navy-700);
+  border-radius: inherit;
+}
+.allocation-fill.danger {
+  background: var(--danger);
+}
+.allocation span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.allocation small {
+  grid-column: 1/-1;
+  font-size: 10.5px;
+  color: var(--text-faint);
+}
+.budget-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.budget-actions .btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.budget-modal {
+  max-width: 680px;
+}
+.budgets-page .modal-body {
+  padding: 20px 24px;
+}
+.budgets-page .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.budgets-page .form-field.full {
+  grid-column: 1/-1;
+}
+.budgets-loading {
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+@media (max-width: 900px) {
+  .budget-kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 760px) {
+  .budgets-page-head .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+  .budgets-page .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .budgets-page .form-field.full {
+    grid-column: auto;
+  }
+  .budget-actions {
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 440px) {
+  .budget-kpis {
+    grid-template-columns: 1fr;
+  }
+}

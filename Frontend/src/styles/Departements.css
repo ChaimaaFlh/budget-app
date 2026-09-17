@@ -1,0 +1,53 @@
+.departments-page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.departments-page-head h1 {
+  font-size: 23px;
+}
+.departments-page-head p {
+  margin: 5px 0 0;
+  color: var(--text-muted);
+  font-size: 13.5px;
+  max-width: 680px;
+}
+.departments-panel {
+  margin-bottom: 0;
+}
+.department-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.department-actions .btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.department-modal {
+  max-width: 520px;
+}
+.departments-page .modal-body {
+  padding: 20px 24px;
+}
+.departments-loading {
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+@media (max-width: 760px) {
+  .departments-page-head .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+  .department-actions {
+    justify-content: flex-start;
+  }
+}
